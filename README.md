@@ -66,4 +66,3 @@ Run the application using the instructions provided in the **Setup Instructions*
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
