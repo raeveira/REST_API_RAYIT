@@ -26,7 +26,6 @@ This project fetches data from a REST API, parses the JSON response, and display
 2. **Install Gradle:**
     - Follow the instructions on the [Gradle Installation Guide](https://gradle.org/install/).
 
-
 3. **Build the project using Gradle:**
     ```sh
     ./gradlew build
@@ -62,7 +61,7 @@ String uri = "https://nominatim.openstreetmap.org/search?format=json&q=Roermond"
 
 Run the application using the instructions provided in the **Setup Instructions** section.
 
-## Contriubers
+## Contributors
 * **Rae** - rae@raeveira.nl - [GitHub](https://github.com/raeveira)
 
 ## License
