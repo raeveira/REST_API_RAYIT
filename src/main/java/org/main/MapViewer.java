@@ -36,7 +36,7 @@ public class MapViewer {
     private static final TileFactoryInfo info = new OSMTileFactoryInfo();
     private static final DefaultTileFactory tileFactory = new DefaultTileFactory(info);
 
-    public void displayMap(List<Map<String, String>> coordinates) {
+    public void displayMap(List<Map<String, String>> coordinates, Boolean showRoute) {
         if (coordinates.isEmpty()) {
             logger.error("No coordinates provided");
             return;
@@ -87,7 +87,9 @@ public class MapViewer {
 
         // Create a compound painter that uses both the route-painter and the waypoint-painter
         List<Painter<JXMapViewer>> painters = new ArrayList<>();
-        //painters.add(routePainter); // Uncomment this line to display the direct route
+        if(showRoute) {
+            painters.add(routePainter);
+        }
         painters.add(waypointPainter);
 
         CompoundPainter<JXMapViewer> painter = new CompoundPainter<>(painters);

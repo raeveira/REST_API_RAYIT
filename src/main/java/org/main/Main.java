@@ -17,11 +17,12 @@ public class Main {
         MapViewer mapViewer = new MapViewer();
 
         try {
+            Boolean showRoute = false;
             String uri = "https://nominatim.openstreetmap.org/search?format=json&q=Roermond";
             String rawData = dataFetcher.fetchData(uri);
             List<Map<String, Object>> structuredData = jsonFormatter.parseJson(rawData);
             List<Map<String, String>> coordinates = jsonFormatter.extractCoordinates(structuredData);
-            mapViewer.displayMap(coordinates);
+            mapViewer.displayMap(coordinates, showRoute);
             logger.info("Data fetched and displayed successfully");
         } catch (IOException | InterruptedException e) {
             logger.error("Error occurred while fetching data", e);
